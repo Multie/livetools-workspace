@@ -1,0 +1,18 @@
+[submodule "projects/livetools-backend"]
+	path = projects/livetools-backend
+	url = https://github.com/Multie/livetools-backend
+[submodule "projects/livetools-application"]
+	path = projects/livetools-application
+	url = https://github.com/Multie/livetools-application
+[submodule "projects/livetools-files"]
+	path = projects/livetools-files
+	url = https://github.com/Multie/livetools-files
+[submodule "projects/livetools-finance"]
+	path = projects/livetools-finance
+	url = https://github.com/Multie/livetools-finance
+[submodule "projects/livetools-plugin"]
+	path = projects/livetools-plugin
+	url = https://github.com/Multie/livetools-plugin
+[submodule "projects/livetools-users"]
+	path = projects/livetools-users
+	url = https://github.com/Multie/livetools-users
