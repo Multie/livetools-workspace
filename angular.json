@@ -3,5 +3,234 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
+    "livetoolsPlugin": {
+      "projectType": "library",
+      "root": "projects/livetools-plugin",
+      "sourceRoot": "projects/livetools-plugin/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/livetools-plugin/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/livetools-plugin/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/livetools-plugin/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/livetools-plugin/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    },
+    "livetoolsUsers": {
+      "projectType": "library",
+      "root": "projects/livetools-users",
+      "sourceRoot": "projects/livetools-users/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/livetools-users/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/livetools-users/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/livetools-users/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/livetools-users/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    },
+    "livetoolsApplication": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/livetools-application",
+      "sourceRoot": "projects/livetools-application/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/livetools-application",
+            "index": "projects/livetools-application/src/index.html",
+            "main": "projects/livetools-application/src/main.ts",
+            "polyfills": [
+              "zone.js"
+            ],
+            "tsConfig": "projects/livetools-application/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/livetools-application/src/favicon.ico",
+              "projects/livetools-application/src/assets"
+            ],
+            "styles": [
+              "projects/livetools-application/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "livetoolsApplication:build:production"
+            },
+            "development": {
+              "browserTarget": "livetoolsApplication:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "livetoolsApplication:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "projects/livetools-application/tsconfig.spec.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/livetools-application/src/favicon.ico",
+              "projects/livetools-application/src/assets"
+            ],
+            "styles": [
+              "projects/livetools-application/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    },
+    "livetoolsFinance": {
+      "projectType": "library",
+      "root": "projects/livetools-finance",
+      "sourceRoot": "projects/livetools-finance/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/livetools-finance/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/livetools-finance/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/livetools-finance/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/livetools-finance/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    },
+    "livetoolsFiles": {
+      "projectType": "library",
+      "root": "projects/livetools-files",
+      "sourceRoot": "projects/livetools-files/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/livetools-files/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/livetools-files/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/livetools-files/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/livetools-files/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    }
   }
 }

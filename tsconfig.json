@@ -16,6 +16,41 @@
     "experimentalDecorators": true,
     "moduleResolution": "node",
     "importHelpers": true,
+    "paths": {
+      "livetoolsClientPlugin": [
+        "dist/livetools-client-plugin"
+      ],
+      "livetoolsClientUsers": [
+        "dist/livetools-client-users"
+      ],
+      "livetoolsFiles": [
+        "dist/livetools-files"
+      ],
+      "livetoolsFinance": [
+        "dist/livetools-finance"
+      ],
+      "livetoolsPlugin": [
+        "dist/livetools-plugin"
+      ],
+      "livetoolsUsers": [
+        "dist/livetools-users"
+      ],
+      "plugin": [
+        "dist/plugin"
+      ],
+      "plugin-files": [
+        "dist/plugin-files"
+      ],
+      "plugin-finance": [
+        "dist/plugin-finance"
+      ],
+      "plugin-recipes": [
+        "dist/plugin-recipes"
+      ],
+      "plugin-users": [
+        "dist/plugin-users"
+      ]
+    },
     "target": "ES2022",
     "module": "ES2022",
     "useDefineForClassFields": false,
